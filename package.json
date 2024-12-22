@@ -8,12 +8,14 @@
   ],
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "format": "npx prettier . --write"
   },
   "keywords": [],
   "author": "James Langridge",
   "license": "MIT",
   "devDependencies": {
+    "prettier": "3.4.2",
     "typescript": "^5.7.2"
   }
 }
