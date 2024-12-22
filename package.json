@@ -1,11 +1,31 @@
 {
   "name": "mikomi",
   "version": "1.0.0",
+  "description": "Utilities for calculating probabilities",
+  "license": "MIT",
+  "repository": "james-langridge/mikomi",
+  "author": {
+    "name": "James Langridge",
+    "email": "l@ngridge.com",
+    "url": "https://la.ngridge.com"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
+  "keywords": ["poker", "odds", "probability", "math"],
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
@@ -17,9 +37,6 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
   },
-  "keywords": [],
-  "author": "James Langridge",
-  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@typescript-eslint/eslint-plugin": "^8.18.1",
