@@ -1,6 +1,6 @@
 {
   "name": "mikomi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilities for calculating probabilities",
   "license": "MIT",
   "repository": "james-langridge/mikomi",
@@ -25,7 +25,12 @@
   "files": [
     "dist"
   ],
-  "keywords": ["poker", "odds", "probability", "math"],
+  "keywords": [
+    "poker",
+    "odds",
+    "probability",
+    "math"
+  ],
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
