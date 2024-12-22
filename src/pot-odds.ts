@@ -12,7 +12,7 @@ export interface PotOddOptions {
  * @returns A percentage to 3 decimal points
  * @example
  * ```ts
- * potOdds(50, 30) // returns: 0.273
+ * potOdds({pot: 50, bet: 30}) // returns: 0.273
  * ```
  */
 export function potOdds({ pot, bet }: PotOddOptions) {

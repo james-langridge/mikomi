@@ -11,8 +11,8 @@ npm install mikomi
 ## Usage
 
 ```js
-import {potOdds} from 'mikomi';
+import { potOdds } from 'mikomi';
 
-const odds = potOdds(50, 30);
+const odds = potOdds({pot: 50, bet: 30});
 console.log(odds); // 0.273
 ```
