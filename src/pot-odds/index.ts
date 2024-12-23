@@ -19,7 +19,7 @@ export interface PotOddOptions {
  * potOdds({pot: 50, bet: 30, isBluff: true}) // returns: 0.375
  * ```
  */
-export function potOdds({ pot, bet, isBluff = false }: PotOddOptions) {
+export function potOdds({ pot, bet, isBluff = false }: PotOddOptions): number {
   if (!Number.isFinite(pot) || !Number.isFinite(bet)) {
     throw new Error("Pot and bet must be finite numbers");
   }
