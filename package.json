@@ -14,11 +14,14 @@
   "engines": {
     "node": ">=18"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "default": "./dist/index.js"
     }
   },
@@ -44,14 +47,17 @@
     "docs": "typedoc src/index.ts",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
-    "publish:patch": " tsc && npm run test && npm run lint && npm run format:check && npm version patch && npm publish",
-    "publish:minor": "tsc && npm run test && npm run lint && npm run format:check && npm version minor && npm publish",
-    "publish:major": "tsc && npm run test && npm run lint && npm run format:check && npm version major && npm publish"
+    "publish:patch": "npm run prepublishOnly && npm run test && npm run lint && npm run format:check && npm version patch && npm publish",
+    "publish:minor": "npm run prepublishOnly && npm run test && npm run lint && npm run format:check && npm version minor && npm publish",
+    "publish:major": "npm run prepublishOnly && npm run test && npm run lint && npm run format:check && npm version major && npm publish",
+    "build": "node build.js && tsc --emitDeclarationOnly --outDir dist",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@typescript-eslint/eslint-plugin": "^8.18.1",
     "@vitest/coverage-v8": "^2.1.8",
+    "esbuild": "^0.24.2",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.14.0",

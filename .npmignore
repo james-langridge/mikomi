@@ -1,23 +1,18 @@
 # Source
 src/
-
-# Tests
-**/*.test.*
-**/*.spec.*
-**/__tests__/*
-
-# Source maps
-**/*.map
-
-# Config files
-.github
-.vscode
-.gitignore
+tests/
+coverage/
+.github/
+.vscode/
+*.test.*
+*.spec.*
+__tests__/
+docs/
+examples/
+*.map
+*.tsbuildinfo
 .eslintrc*
 .prettierrc*
+.editorconfig
 tsconfig.json
 vitest.config.ts
-
-# Build artifacts
-coverage/
-node_modules/
