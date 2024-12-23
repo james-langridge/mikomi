@@ -16,7 +16,7 @@ export interface PotOddOptions {
  * @example
  * ```ts
  * potOdds({pot: 50, bet: 30}) // returns: 0.273
- * potOdds({pot: 50, bet: 30, isBuff: true}) // returns: 0.375
+ * potOdds({pot: 50, bet: 30, isBluff: true}) // returns: 0.375
  * ```
  */
 export function potOdds({ pot, bet, isBluff = false }: PotOddOptions) {

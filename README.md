@@ -17,5 +17,5 @@ import { potOdds } from "mikomi";
 const callOdds = potOdds({ pot: 50, bet: 30 });
 
 // 0.375 - bluff must be successful at least 37.5 % of the time to be profitable
-const bluffOdds = potOdds({ pot: 50, bet: 30, isBuff: true });
+const bluffOdds = potOdds({ pot: 50, bet: 30, isBluff: true });
 ```
