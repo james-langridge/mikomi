@@ -9,8 +9,8 @@ export interface PotOddOptions {
 
 /**
  * Calculates the percentage of time that a player must win for their call or bluff to be profitable.
- * @param pot - The size of the pot
- * @param bet - The size of the bet to call
+ * @param pot - The size of the pot.  It must be >= 0.
+ * @param bet - The size of the bet to call. It must be >= 0.
  * @param [isBluff] - Is this is a bluff bet (optional)
  * @returns A percentage to 3 decimal points
  * @example
@@ -20,6 +20,15 @@ export interface PotOddOptions {
  * ```
  */
 export function potOdds({ pot, bet, isBluff = false }: PotOddOptions) {
+  if (!Number.isFinite(pot) || !Number.isFinite(bet)) {
+    throw new Error("Pot and bet must be finite numbers");
+  }
+
+  if (pot < 0) throw new Error("Pot cannot be negative");
+  if (bet < 0) throw new Error("Bet cannot be negative");
+
   const multiplier = isBluff ? 1 : 2;
-  return Math.round((bet / (pot + multiplier * bet)) * 1000) / 1000;
+  const denominator = pot + multiplier * bet;
+
+  return Math.round((bet / denominator) * 1000) / 1000;
 }
