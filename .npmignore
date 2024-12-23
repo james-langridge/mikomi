@@ -1,0 +1,23 @@
+# Source
+src/
+
+# Tests
+**/*.test.*
+**/*.spec.*
+**/__tests__/*
+
+# Source maps
+**/*.map
+
+# Config files
+.github
+.vscode
+.gitignore
+.eslintrc*
+.prettierrc*
+tsconfig.json
+vitest.config.ts
+
+# Build artifacts
+coverage/
+node_modules/

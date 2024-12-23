@@ -23,7 +23,12 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*",
+    "!dist/**/*.map",
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "poker",
