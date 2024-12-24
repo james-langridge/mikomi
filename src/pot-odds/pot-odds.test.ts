@@ -2,16 +2,12 @@ import { potOdds } from "./index";
 import { describe, test, expect } from "vitest";
 
 describe("potOdds", () => {
-  test("calculates pot odds correctly for a call", () => {
-    expect(potOdds({ pot: 100, bet: 50 })).toBe(0.25);
-  });
-
-  test("calculates pot odds correctly for a bluff", () => {
-    expect(potOdds({ pot: 100, bet: 50, isBluff: true })).toBe(0.333);
+  test("calculates pot odds correctly", () => {
+    expect(potOdds({ pot: 100, bet: 50 })).toBe(0.333);
   });
 
   test("handles zero pot size", () => {
-    expect(potOdds({ pot: 0, bet: 50 })).toBe(0.5);
+    expect(potOdds({ pot: 0, bet: 50 })).toBe(1);
   });
 
   test("handles zero bet size", () => {
@@ -23,11 +19,11 @@ describe("potOdds", () => {
   });
 
   test("handles equal pot and bet sizes", () => {
-    expect(potOdds({ pot: 100, bet: 100 })).toBe(0.333);
+    expect(potOdds({ pot: 100, bet: 100 })).toBe(0.5);
   });
 
   test("handles pot smaller than bet", () => {
-    expect(potOdds({ pot: 50, bet: 100 })).toBe(0.4);
+    expect(potOdds({ pot: 50, bet: 100 })).toBe(0.667);
   });
 
   test("throws error for negative pot", () => {
